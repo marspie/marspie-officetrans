@@ -27,10 +27,10 @@ public class PPTConverter extends Converter {
              * */
             ppt = Dispatch.call(ppts, "Open", inputFile, true,true, false).toDispatch();
             Dispatch.call(ppt, "SaveAs", outputFile, PPT_FORMAT_PDF); // ppSaveAsPDF为特定值32
-
         } catch (Exception e) {
             e.printStackTrace();
-            throw e;
+            log.error("PPT Convert to pdf error source::{} target::{} error::{}", inputFile, outputFile, e.getMessage());
+			return false;
         } finally {
             if (ppt != null) {
                 Dispatch.call(ppt, "Close");
