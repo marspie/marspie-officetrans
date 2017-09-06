@@ -102,7 +102,7 @@ public class OfficeTransUtil {
 	 */
 	public void transform(String officeFilePath, String outputFilepath, OfficeType officeType) {
 		synchronized (this.lock) {
-			Object[] o = {officeFilePath, outputFilepath, officeType};
+			Object[] o = {officeFilePath, outputFilepath, officeType + ""};
 			this.fileQueue.add(o);
 		}
 	}

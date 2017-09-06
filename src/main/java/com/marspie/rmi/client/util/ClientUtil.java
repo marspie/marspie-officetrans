@@ -27,7 +27,7 @@ public class ClientUtil
 
 	public static void main(String[] args) throws Exception {
 		OfficeTransService s = ClientUtil.getProxy("127.0.0.1", 1199, "OfficeTransService", OfficeTransService.class);
-		s.officeToPdf("d:\\zyzd.xlsx", "d:\\zds2.xlsx.pdf", OfficeType.EXCEL);
+		s.officeToPdf("d:\\3.pptx", "d:\\3.pptx.pdf", OfficeType.PPT);
 		System.out.println("finish!");
 	}
 }
